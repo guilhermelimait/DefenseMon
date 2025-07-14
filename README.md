@@ -1,53 +1,30 @@
-# DefenseMon
+# OSINT Monitoring Dashboard
 
-Open-source, web-based OSINT monitoring system for military movements and potential conflict indicators.
+This project monitors public OSINT sources for military movements, defense readiness, and potential crises, warning users of possible conflict or collapse.
 
-## Features
+## 🏗️ Structure
 
-- Dark mode UI by default (no bright mode)
-- No authentication (open access)
-- Extensible: add news, social media, and other OSINT feeds
-- Interactive dashboard and mapping (coming soon)
+- `frontend/` — React dashboard for users
+- `data/events.json` — OSINT findings (auto-updated)
+- `scraper/scrape.py` — Scraper script (customize for your sources)
+- `.github/workflows/scraper.yml` — GitHub Actions: runs scraper hourly
 
-## Stack
+## 🚀 Setup
 
-- **Frontend:** React (Vite) + TailwindCSS (dark mode), TypeScript
-- **Backend:** Python FastAPI
-- **Deployment:** GitHub Pages (frontend), any server for backend
+1. **Frontend:**  
+   - `cd frontend`
+   - `npm install`
+   - `npm start` (for local dev)
+   - Deploy `frontend/public` and `data/events.json` to GitHub Pages
 
----
+2. **Scraper:**  
+   - Edit `scraper/scrape.py` to gather real OSINT data.
+   - On push, or hourly, GitHub Actions updates `data/events.json`.
 
-## Quickstart
+3. **View:**  
+   - Open the deployed site.  
+   - Readiness level and highlights auto-update from the latest data.
 
-### Frontend
+## 🛡️ Disclaimer
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-### Backend
-
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-## Deployment
-
-- **Frontend:** Deploy `/frontend/dist` to GitHub Pages (see Vite docs for static site build)
-- **Backend:** Deploy to your preferred Python hosting or serverless platform
-
----
-
-## Contributing
-
-PRs, issues, and feedback welcome!
-
-## License
-
-MIT
+This is a research/demonstration project. Always verify information from multiple sources before acting.

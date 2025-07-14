@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp": "2025-07-14T08:00:00Z",
+    "title": "Starter Event",
+    "description": "This is a sample OSINT event. Replace this with real findings.",
+    "type": "info",
+    "severity": "low",
+    "source": "https://example.com",
+    "region": "global"
+  }
+]
